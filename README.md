@@ -10,7 +10,7 @@ Counter
 #PROFILE VIEWS
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&label=PROFILE+VIEWS)
 #base
-![](https://komarev.com/ghpvc/?username=LaraEvdokimova&base=1)
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&base=0)
 #abbreviation
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
-![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=MY+PROFILE+VIEWS&base=500)
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=MY+PROFILE+VIEWS&base=0)
