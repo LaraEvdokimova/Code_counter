@@ -31,7 +31,8 @@ system("crontab -l > cron.txt")
 with open("cron.txt", "r") as f:
     if "commit_bot.py" not in f.read():
         with open("cron.txt", "a") as f:
-            f.write(f"{CRON_JOB_TIME} cd {Path.cwd()} && python3 commit_bot.py\n")
+            #f.write(f"{CRON_JOB_TIME} cd {Path.cwd()} && python3 commit_bot.py\n")
+            f.write(f"{CRON_JOB_TIME} cd {Path.cwd()} && python commit_bot.py\n")
             f.close()
             system("crontab cron.txt")
             system("rm -f cron.txt")
