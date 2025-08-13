@@ -1,7 +1,8 @@
 UP-TO-CURRENT-DAY
 
 # Code_counter
-
+TOTAL
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=MY+PROFILE+VIEWS&base=0)
 
 Counter 
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova)
@@ -30,9 +31,4 @@ Counter
 #abbreviation
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
 
-
-
-TOTAL
-![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=MY+PROFILE+VIEWS&base=0)
-
-UP-TO-DATE
+UP-TO-DATE @TODAY
