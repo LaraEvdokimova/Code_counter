@@ -12,8 +12,9 @@ jobs:
       
       - name: Update README
         run: |
-          sed -i "s/Last update: .*/Last update: $(date '+%Y-%m-%d %H:%M')/g" README.md
-          
+          // sed -i "s/Last update: .*/Last update: $(date '+%Y-%m-%d %H:%M')/g" README.md
+          sed -i "s/Последнее обновление: .*/Последнее обновление: $(date -u '+%d.%m.%Y %H:%M MSK')/g" README.md
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
