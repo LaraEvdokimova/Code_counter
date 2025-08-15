@@ -34,4 +34,7 @@ UP-TO-CURRENT-DAY
 [![Counter](https://img.shields.io/badge/Total_Views-100,836-brightgreen)](https://github.com/yourprofile)  
 
 **Последнее обновление:**  
-[![Date](https://img.shields.io/date/$(date +%s)?label=Актуально%20на&color=blue)](https://shields.io)
+<[![Date](https://img.shields.io/date/$(date +%s)?label=Актуально%20на&color=blue)](https://shields.io)>
+
+<![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)>
+
