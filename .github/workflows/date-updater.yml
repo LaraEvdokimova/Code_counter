@@ -24,3 +24,7 @@ jobs:
   run: |
     echo "Current date: $(date '+%Y-%m-%d %H:%M %Z')"
     cat README.md | grep "Последнее обновление"
+
+    permissions:
+  contents: write
+  pull-requests: write
