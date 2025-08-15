@@ -2,14 +2,16 @@ UP-TO-CURRENT-DAY
 
 # Code_counter
 
-##Total amount of views
-![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
+###Profile views counting
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=PROFILE+VIEW+COUNTINGS&base=100500)
+
+###Including:
 
 #Profile views count
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&label=PROFILE+VIEWS+COUNT)
 
-#Profile views counting
-![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=PROFILE+VIEW+COUNTINGS&base=100500)
+#Profile views extra-amount
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
 
 #Profile views counter 
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova)
