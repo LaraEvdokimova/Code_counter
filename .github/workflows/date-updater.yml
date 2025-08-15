@@ -4,6 +4,9 @@ on:
     - cron: '0 0 * * *' # Ежедневно в 00:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-date:
     runs-on: ubuntu-latest
@@ -12,19 +15,19 @@ jobs:
       
       - name: Update README
         run: |
-          // sed -i "s/Last update: .*/Last update: $(date '+%Y-%m-%d %H:%M')/g" README.md
-          sed -i "s/Последнее обновление: .*/Последнее обновление: $(date -u '+%d.%m.%Y %H:%M MSK')/g" README.md
+          # Обновление даты и счетчика
+          CURRENT_DATE=$(date -u '+%d.%m.%Y %H:%M MSK')
+          TIMESTAMP=$(date +%s)
+          
+          sed -i "s/Последнее обновление: .*/Последнее обновление: ${CURRENT_DATE}/g" README.md
+          sed -i "s/\/date\/[0-9]*/\/date\/${TIMESTAMP}/g" README.md
+          
+      - name: Debug output
+        run: |
+          echo "Current UTC: $(date -u '+%Y-%m-%d %H:%M %Z')"
+          grep -E 'Последнее обновление|date' README.md
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update date"
-
-          - name: Debug output
-  run: |
-    echo "Current date: $(date '+%Y-%m-%d %H:%M %Z')"
-    cat README.md | grep "Последнее обновление"
-
-    permissions:
-  contents: write
-  pull-requests: write
+          commit_message: "Auto-update: $(date +'%d.%m.%Y')"
+          branch: main
