@@ -18,3 +18,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update date"
+
+          - name: Debug output
+  run: |
+    echo "Current date: $(date '+%Y-%m-%d %H:%M %Z')"
+    cat README.md | grep "Последнее обновление"
