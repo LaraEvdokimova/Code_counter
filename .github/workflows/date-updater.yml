@@ -1,0 +1,20 @@
+name: Update Date
+on:
+  schedule:
+    - cron: '0 0 * * *' # Ежедневно в 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update README
+        run: |
+          sed -i "s/Last update: .*/Last update: $(date '+%Y-%m-%d %H:%M')/g" README.md
+          
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update date"
