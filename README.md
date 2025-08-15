@@ -1,14 +1,10 @@
-UP-TO-CURRENT-DAY
-
-**Code_counter**
-
+**Code_counter_views**
 **Profile views counting**
-<![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=PROFILE+VIEW+COUNTINGS&base=100500)>
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&color=green&style=for-the-badge&label=PROFILE+VIEW+COUNTINGS&base=100500)
 
 **Including:**
-
 **Profile views count**
-<![](https://komarev.com/ghpvc/?username=LaraEvdokimova&label=PROFILE+VIEWS+COUNT)>
+![](https://komarev.com/ghpvc/?username=LaraEvdokimova&label=PROFILE+VIEWS+COUNT)
 
 **Profile views extra-amount**
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
@@ -34,7 +30,6 @@ UP-TO-CURRENT-DAY
 [![Counter](https://img.shields.io/badge/Total_Views-100,836-brightgreen)](https://github.com/yourprofile)  
 
 **Последнее обновление:**  
-<[![Date](https://img.shields.io/date/$(date +%s)?label=Актуально%20на&color=blue)](https://shields.io)>
+![Date](https://img.shields.io/date/$(date -u +%s)?label=Обновлено&color=blue&style=flat-square)
 
-<![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)>
-
+![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)
