@@ -38,7 +38,7 @@
 
 [![Total Views](https://komarev.com/ghpvc/?username=LaraEvdokimova&style=for-the-badge&label=ВСЕГО+ПРОСМОТРОВ&color=00FF00&base=100500)](https://github.com/LaraEvdokimova)
 
-[![Daily](https://img.shields.io/badge/СЕГОДНЯ-344-8A2BE2?logo=github&style=flat-square)]()
+[![Daily](https://img.shields.io/badge/СЕГОДНЯ-{TODAY}-8A2BE2?logo=github&style=flat-square)]()
 
 **Fresh up-to-date**  
 [![Date](https://img.shields.io/date/1755482101$(date +%s)?label=ОБНОВЛЕНО&color=009688&style=for-the-badge)](https://github.com/LaraEvdokimova)
