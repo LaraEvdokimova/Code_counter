@@ -1,0 +1,26 @@
+name: Auto Update Counter
+on:
+  schedule:
+    - cron: '0 * * * *'  # each hour
+  workflow_dispatch:     # manual
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Обновить дату
+        env:
+          TZ: America/New_York
+        run: |
+          TIMESTAMP=$(date +%s)
+          sed -i "s|/date/[0-9]*|/date/$TIMESTAMP?cache=buster|g" README.md
+          sed -i "s|Последнее обновление:.*|Последнее обновление: $(date '+%d.%m.%Y %H:%M EST')|g" README.md
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto: Обновление даты $(date +'%d.%m.%Y')"
