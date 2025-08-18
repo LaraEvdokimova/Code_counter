@@ -41,7 +41,7 @@
 [![Daily](https://img.shields.io/badge/СЕГОДНЯ-344-8A2BE2?logo=github&style=flat-square)]()
 
 **Последнее обновление:**  
-[![Date](https://img.shields.io/date/1755395658$(date +%s)?label=ОБНОВЛЕНО&color=009688&style=for-the-badge)](https://github.com/LaraEvdokimova)
+[![Date](https://img.shields.io/date/1755482101$(date +%s)?label=ОБНОВЛЕНО&color=009688&style=for-the-badge)](https://github.com/LaraEvdokimova)
 
 
 **Просмотры профиля:**  
@@ -50,6 +50,6 @@
 
 **Последнее обновление:**  
 
-![Date](https://img.shields.io/date/1755395658$(date -u +%s)?label=Обновлено&color=blue&style=flat-square)
+![Date](https://img.shields.io/date/1755482101$(date -u +%s)?label=Обновлено&color=blue&style=flat-square)
 
 ![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)
