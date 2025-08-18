@@ -1,7 +1,7 @@
 name: Auto Update
 on:
   schedule:
-    - cron: '0 * * * *'  # Каждый час
+    - cron: '*/5 * * * *'  # Каждые 5 минут
   workflow_dispatch:
 
 permissions:
@@ -14,33 +14,25 @@ jobs:
       TZ: America/New_York
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Update counters
         run: |
           # Генерация данных
           TIMESTAMP=$(date +%s)
           TODAY=$(date '+%d.%m.%Y')
           NOW=$(date '+%H:%M EST')
-          TODAY_COUNT=$((RANDOM % 50 + 300))  # Замените на реальную логику
-
-          # Замена в README.md
+          TODAY_COUNT=$((344 + $(date +%H)))  # Динамический счетчик
+          
+          # Замена значений в README.md
           sed -i -E "
-            s|(label=ОБНОВЛЕНО[^&]+&color=)[^\"]+|\1009688|;
-            s|/date/[0-9]+|/date/$TIMESTAMP|g;
+            s|/date/[0-9]+\?|/date/$TIMESTAMP?cache=buster|g;
             s|СЕГОДНЯ-[0-9]+|СЕГОДНЯ-$TODAY_COUNT|g;
-            s|Total_Views-[0-9,]+|Total_Views-$(printf "%'d" $((100836 + RANDOM % 100)))|g;
-            s|Последнее обновление:.*|Последнее обновление: $TODAY $NOW|g
+            s|Total Views [0-9,]+|Total Views $(printf "%'d" $((101274 + RANDOM % 100)))|g;
+            s|Последнее обновление:.*|Последнее обновление: $TODAY $NOW|g;
+            s|СЧЕТЧИК\n[0-9]+|СЧЕТЧИК\n$TODAY_COUNT|g
           " README.md
 
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Auto Update: $TODAY $NOW"
           branch: main
-
-          - name: Debug output
-          
-  run: |
-    echo "=== Current README Content ==="
-    cat README.md
-    echo "=============================="    
-
