@@ -1,0 +1,38 @@
+name: Auto Update
+on:
+  schedule:
+    - cron: '0 * * * *'  # Каждый час
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/New_York
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update counters
+        run: |
+          # Генерация данных
+          TIMESTAMP=$(date +%s)
+          TODAY=$(date '+%d.%m.%Y')
+          NOW=$(date '+%H:%M EST')
+          TODAY_COUNT=$((RANDOM % 50 + 300))  # Замените на реальную логику
+
+          # Замена в README.md
+          sed -i -E "
+            s|(label=ОБНОВЛЕНО[^&]+&color=)[^\"]+|\1009688|;
+            s|/date/[0-9]+|/date/$TIMESTAMP|g;
+            s|СЕГОДНЯ-[0-9]+|СЕГОДНЯ-$TODAY_COUNT|g;
+            s|Total_Views-[0-9,]+|Total_Views-$(printf "%'d" $((100836 + RANDOM % 100)))|g;
+            s|Последнее обновление:.*|Последнее обновление: $TODAY $NOW|g
+          " README.md
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto Update: $TODAY $NOW"
+          branch: main
