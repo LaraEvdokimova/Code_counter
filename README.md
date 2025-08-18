@@ -14,7 +14,7 @@
 
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova&abbreviated=true)
 
-**Profile views counter **
+**Profile views counter**
 
 ![](https://komarev.com/ghpvc/?username=LaraEvdokimova)
 
@@ -57,40 +57,3 @@
 [![Update](https://img.shields.io/date/{timestamp}?cache=buster&label=%D0%9E%D0%91%D0%9D%D0%9E%D0%92%D0%9B%D0%95%D0%9D%D0%9E&color=009688&style=for-the-badge&logo=github)](https://github.com/LaraEvdokimova)
 echo "TZ=America/New_York" >> $GITHUB_ENV
 NEW_DATE="$(TZ=America/New_York date '+%d.%m.%Y %H:%M EST')"
-
-name: Emergency Fix
-on: [workflow_dispatch]
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-jobs:
-  debug:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Debug environment
-        run: |
-          echo "UTC Time: $(date -u '+%Y-%m-%d %H:%M:%S')"
-          echo "Server Timezone: $(TZ=$TZ date '+%Z')"  # Покажет актуальную зону (например, EST)
-          echo "README exists: $(ls -la README.md)"
-          echo "Current content:"
-          cat README.md | grep -E 'Последнее|date'
-
-      - name: Force update
-        run: |
-          NEW_DATE="$(TZ=$TZ date '+%d.%m.%Y %H:%M %Z')"  # Автоматически подставляет аббревиатуру зоны
-          TIMESTAMP=$(date +%s)          
-     
-          sed -i "s|/date/[0-9]*|/date/$TIMESTAMP?cache=buster|g" README.md
-
-          echo "Modified content:"
-          grep -E 'Последнее|date' README.md
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "EMERGENCY FIX: $(date +'%s')"
-          branch: main
