@@ -83,12 +83,9 @@ jobs:
       - name: Force update
         run: |
           NEW_DATE="$(TZ=$TZ date '+%d.%m.%Y %H:%M %Z')"  # Автоматически подставляет аббревиатуру зоны
-          TIMESTAMP=$(date +%s)
-          
-         //  sed -i "s|Последнее обновление:.*|Последнее обновление: ${NEW_DATE}|g" README.md
-          // sed -i "s|/date/[0-9]*|/date/${TIMESTAMP}?cache=buster|g" README.md
+          TIMESTAMP=$(date +%s)          
+     
           sed -i "s|/date/[0-9]*|/date/$TIMESTAMP?cache=buster|g" README.md
-
 
           echo "Modified content:"
           grep -E 'Последнее|date' README.md
