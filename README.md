@@ -41,7 +41,7 @@
 [![Daily](https://img.shields.io/badge/СЕГОДНЯ-{TODAY}-8A2BE2?logo=github&style=flat-square)]()
 
 **Fresh up-to-date**  
-![Date](https://img.shields.io/date/1756172510{TIMESTAMP}?cache=buster$(date +%s)?label=ОБНОВЛЕНО&color=009688&style=for-the-badge)](https://github.com/LaraEvdokimova)
+![Date](https://img.shields.io/date/1756258719{TIMESTAMP}?cache=buster$(date +%s)?label=ОБНОВЛЕНО&color=009688&style=for-the-badge)](https://github.com/LaraEvdokimova)
 
 **Views**  
 
@@ -49,12 +49,12 @@
 
 **Updates**  
 
-![Date](https://img.shields.io/date/1756172510{TIMESTAMP}?cache=buster$(date -u +%s)?label=Обновлено&color=blue&style=flat-square)
+![Date](https://img.shields.io/date/1756258719{TIMESTAMP}?cache=buster$(date -u +%s)?label=Обновлено&color=blue&style=flat-square)
 
 ![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)
 
 ## Timestamp
-[![Update](https://img.shields.io/date/1756172510{timestamp}?cache=buster&label=%D0%9E%D0%91%D0%9D%D0%9E%D0%92%D0%9B%D0%95%D0%9D%D0%9E&color=009688&style=for-the-badge&logo=github)](https://github.com/LaraEvdokimova)
+[![Update](https://img.shields.io/date/1756258719{timestamp}?cache=buster&label=%D0%9E%D0%91%D0%9D%D0%9E%D0%92%D0%9B%D0%95%D0%9D%D0%9E&color=009688&style=for-the-badge&logo=github)](https://github.com/LaraEvdokimova)
 echo "TZ=America/New_York" >> $GITHUB_ENV
 NEW_DATE="$(TZ=America/New_York date '+%d.%m.%Y %H:%M EST')"
 
