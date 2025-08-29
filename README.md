@@ -49,8 +49,7 @@
 ![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)
 
 ## Timestamp 👁 **Счетчик просмотров**
-![Update](https://img.shields.io/date/1756431492{timestamp}?cache=buster&label=%D0%9E%D0%91%D0%9D%D0%9E%D0%92%D0%9B%D0%95%D0%9D%D0%9E&color=009688&style=for-the-badge&logo=github)
-![Обновлено](https://img.shields.io/badge/Обновлено-29.08.2025-009688?style=for-the-badge)
+![TODAY](https://img.shields.io/badge/Обновлено-29.08.2025-009688?style=for-the-badge)
 
 [![Total Views](https://komarev.com/ghpvc/?username=LaraEvdokimova&style=for-the-badge&label=ВСЕГО+ПРОСМОТРОВ&color=00FF00)](https://github.com/LaraEvdokimova)
 
