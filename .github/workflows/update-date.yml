@@ -1,12 +1,12 @@
-name: Update Date Badge Daily
+name: Auto Update Date Badge
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Каждый день в 00:00 UTC
-  workflow_dispatch: # Ручной запуск при необходимости
+    - cron: '0 0 * * *'  # Каждый день в 00:00 UTC
+  workflow_dispatch:
 
 jobs:
-  update-badge:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,12 +16,11 @@ jobs:
       - name: Get current UTC date
         run: echo "DATE=$(date -u +'%d.%m.%Y')" >> $GITHUB_ENV
 
-      - name: Replace date placeholder in README
+      - name: Replace date in README
         run: |
-          sed -i "s|Обновлено-[0-9.]*|Обновлено-${DATE}|" README.md
-          sed -i "s|Обновлено-DATE_PLACEHOLDER|Обновлено-${DATE}|" README.md
+          sed -i "s|{{DATE}}|${DATE}|g" README.md
 
-      - name: Commit and push if changed
+      - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
