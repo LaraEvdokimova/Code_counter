@@ -49,7 +49,7 @@
 ![Custom](https://img.shields.io/badge/Счетчик-344-ff69b4?style=for-the-badge&logo=github&logoColor=white)
 
 ## Timestamp 👁 **Счетчик просмотров**
-![TODAY](https://img.shields.io/badge/Обновлено-{{DATE}}-009688?style=for-the-badge)
+![TODAY](https://img.shields.io/badge/Обновлено-{{date}}-009688?style=for-the-badge)
 
 [![Total Views](https://komarev.com/ghpvc/?username=LaraEvdokimova&style=for-the-badge&label=ВСЕГО+ПРОСМОТРОВ&color=00FF00)](https://github.com/LaraEvdokimova)
 
