@@ -1,26 +1,29 @@
-name: Обновление даты
+name: Update Date Badge Daily
 
 on:
   schedule:
-    - cron: '0 0 * * *' # каждый день в полночь UTC
-  workflow_dispatch:
+    - cron: '0 0 * * *' # Каждый день в 00:00 UTC
+  workflow_dispatch: # Ручной запуск при необходимости
 
 jobs:
-  update-readme:
+  update-badge:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Получаем текущую дату
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current UTC date
         run: echo "DATE=$(date -u +'%d.%m.%Y')" >> $GITHUB_ENV
 
-      - name: Заменяем дату в README
+      - name: Replace date placeholder in README
         run: |
           sed -i "s|Обновлено-[0-9.]*|Обновлено-${DATE}|" README.md
+          sed -i "s|Обновлено-DATE_PLACEHOLDER|Обновлено-${DATE}|" README.md
 
-      - name: Коммитим изменения
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git commit -am "Обновлена дата: $DATE" || echo "Нет изменений"
+          git commit -am "🕒 Автообновление даты: $DATE" || echo "No changes"
           git push
