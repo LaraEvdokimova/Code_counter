@@ -13,12 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get current UTC date
-        run: echo "DATE=$(date -u +'%d.%m.%Y')" >> $GITHUB_ENV
+           - name: Get current UTC date
+        run: echo "date=$(date -u +'%d.%m.%Y')" >> $GITHUB_ENV
 
       - name: Replace date in README
         run: |
-          sed -i "s|{{DATE}}|${DATE}|g" README.md
+          sed -i "s|{{date}}|${date}|g" README.md
 
       - name: Commit changes
         run: |
