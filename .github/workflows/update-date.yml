@@ -2,7 +2,7 @@ name: Auto Update Date Badge
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Каждый день в 00:00 UTC
+    - cron: '0 0 * * *'  # каждый день в 00:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -13,16 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-           - name: Get current UTC date
-        run: echo "date=$(date -u +'%d.%m.%Y')" >> $GITHUB_ENV
-
-      - name: Replace date in README
+      - name: Get current UTC date and replace in README
         run: |
-          sed -i "s|{{date}}|${date}|g" README.md
+          DATE=$(date -u +'%d.%m.%Y')
+          echo "Текущая дата: $DATE"
+          sed -i "s/{{DATE}}/${DATE}/g" README.md
 
-      - name: Commit changes
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git commit -am "🕒 Автообновление даты: $DATE" || echo "No changes"
-          git push
+          git diff --quiet || (git commit -am "🕒 Обновление даты: $(date -u +'%d.%m.%Y')" && git push)
